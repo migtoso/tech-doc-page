@@ -1,0 +1,68 @@
+
+*{
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body{
+  height: auto;
+  width: 100%;
+  font-family: verdana;
+  background-color: #eeeeff;
+  text-align: justify;
+}
+
+#navbar{
+   background-color: white;
+   position: fixed;
+   height: 100vh;
+   width: 20vw;
+   top: 0;  
+   left: 0;
+   padding-right: 2vw;
+   overflow-y: auto;
+}
+
+#navbar li{
+  margin-bottom: 30px;
+  line-height: 1.3em;
+}
+
+
+.left-side{
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-align: center;
+  padding: 20px;
+}
+
+
+h2{
+  font-weight: normal;
+}
+.notes{
+  background-color: #d6e2d6;
+  padding: 10px 15px;
+}
+
+.sql-stmt{
+  color: #090937;
+  padding-left: 20px;
+}
+
+
+#all-sections{
+  padding-left: 25vw;
+  width: 90%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+@media (min-width: 2000px){
+  *{
+    color: white;
+    background-color: black;
+  }
+}
+
+

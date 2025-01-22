@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <header class="left-side">SQL</header>
+       <ul>
+         <li><a href="#What_is_SQL?" class="nav-link">What is SQL?</a></li>
+         <li><a href="#Basic_SQL_clauses:_SELECT,_FROM,_and_WHERE" class="nav-link">Basic SQL clauses: SELECT, FROM, and WHERE<a></li>
+         <li><a href="#Sorting_the_results:_ORDER_BY" class="nav-link">Sorting the results: ORDER BY</a></li>
+         <li><a href="#Working_with_summarized_data:_GROUP_BY" class="nav-link">Working with summarized data: GROUP BY</a></li>
+         <li><a href="#Combining_query_results:_UNION" class="nav-link">Combining query results: UNION</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+      
+      
+      
+      <div id="all-sections">
+      <!------- FIRST SECTION -------->
+      <section class="main-section" id="What_is_SQL?">
+        <header><h1>What is SQL?</h1></header>
+          <p> 
+            SQL is a computer language for working with sets of facts and the relationships between them. Relational database programs, such as Microsoft Office Access, use SQL to work with data. Unlike many computer languages, SQL is not difficult to read and understand, even for a novice. Like many computer languages, SQL is an international standard that is recognized by standards bodies such as ISO and ANSI.
+          </p>
+          <p>
+            You use SQL to describe sets of data that can help you answer questions. When you use SQL, you must use the correct syntax. Syntax is the set of rules by which the elements of a language are correctly combined. SQL syntax is based on English syntax, and uses many of the same elements as Visual Basic for Applications (VBA) syntax.
+          </p>
+          <p>
+            For example, a simple SQL statement that retrieves a list of last names for contacts whose first name is Mary might resemble this:
+          </p>
+          <p class="sql-stmt">
+            <code>
+              SELECT Last_Name <br>
+              FROM Contacts <br>
+              WHERE First_Name = 'Mary';<br>
+            </code>
+          </p>
+          <h2>SELECT statements</h2>
+          <p>
+          To describe a set of data by using SQL, you write a SELECT statement. A SELECT statement contains a complete description of a set of data that you want to obtain from a database. This includes the following:
+        </p>
+        <ul>
+          <li>What tables contain the data.</li>
+          <li>How data from different sources is related.</li>
+          <li>Which fields or calculations will produce the data.</li>
+          <li>Criteria that data must match to be included.</li>
+          <li>Whether and how to sort the results.</li>
+        </ul>
+      </section>
+      <!------- SECOND SECTION ------->
+      <section class="main-section" id="Basic_SQL_clauses:_SELECT,_FROM,_and_WHERE">
+        <header><h1>Basic SQL clauses: SELECT, FROM, and WHERE</h1></header>
+        <p>A SQL statement takes the general form:</p> 
+        <p class="sql-stmt">
+        <code>
+              SELECT field_1<br>
+              FROM table_1<br>
+              WHERE criterion_1<br>
+              ;<br>
+        </code>
+        </p>
+        <div class="notes">
+            <p>Notes:</p> 
+            <ul>
+              <li>
+              Access ignores line breaks in a SQL statement. However, consider using a line for each clause to help improve the readability of your SQL statements for yourself and others.
+              </li>
+              <li>
+              Every SELECT statement ends with a semi-colon (;). The semi-colon can appear at the end of the last clause or on a line by itself at the end of the SQL statement.
+              </li>
+            </ul>
+        </div>
+        <h2>An example in Access</h2>
+        <p>The following illustrates what a SQL statement for a simple select query might look like in Access:</p>
+        <img src="https://cxcs.microsoft.net/static/public/other-m365/neutral/c54ab29c-713d-46ce-8d05-2d58ff4f57fa/f90caaafa6380afe9df064bd4f045369977c81e4.jpg" alt="SQL query in Acces">
+        <ol>
+          <li>SELECT clause</li>
+          <li>FROM clause</li>
+          <li>WHERE clause</li>
+        </ol>
+        <p>
+          This example SQL statement reads "Select the data that is stored in the fields named E-mail Address and Company from the table named Contacts, specifically those records in which the value of the field City is Seattle."
+        </p>
+        <p>
+          Let's look at the example, one clause at a time, to see how SQL syntax works.
+        </p>
+
+
+        <h2>The SELECT clause</h2>
+        <p class="sql-stmt"><code>SELECT [E-mail Address], Company</code></p>
+
+        <p>
+          This is the SELECT clause. It consists of an operator (SELECT) followed by two identifiers ([E-mail Address] and Company).
+        </p>
+        <p>
+          If an identifier contains spaces or special characters (such as "E-mail Address"), it must be enclosed in square brackets.
+        </p>
+        <p>
+          A SELECT clause does not have to say which tables contain the fields, and it cannot specify any conditions that must be met by the data to be included.
+        </p>
+        <p>
+          The SELECT clause always appears in front of the FROM clause in a SELECT statement.
+        </p>
+
+
+        <h2>The FROM clause</h2>
+        <p class="sql-stmt"><code>FROM Contacts</code></p>
+        <p>
+          This is the FROM clause. It consists of an operator (FROM) followed by an identifier (Contacts).
+        </p>
+
+        <p>
+          A FROM clause does not list the fields to be selected.
+        </p>
+
+      <h2>The WHERE clause</h2>
+      <p class="sql-stmt"><code>WHERE City="Seattle"</code><p>
+
+      <p>
+        This is the WHERE clause. It consists of an operator (WHERE) followed by an expression (City="Seattle").
+      </p>
+
+        
+   
+      </section>
+      <!-------- THIRD SECTION ------->
+      <section class="main-section" id="Sorting_the_results:_ORDER_BY">
+        <header><h1>Sorting the results: ORDER BY</h1></header>
+        <p>
+          Like Microsoft Excel, Access lets you sort query results in a datasheet. You can also specify in the query how you want to sort the results when the query is run, by using an ORDER BY clause. If you use an ORDER BY clause, it is the last clause in the SQL statement.
+        </p>
+        <p>
+          An ORDER BY clause contains a list of the fields that you want to use for sorting, in the same order that you want to apply the sort operations.
+        </p>
+        <p>
+          For example, suppose that you want your results sorted first by the value of the field Company in descending order, and  — if there are records with the same value for Company — sorted next by the values in the field E-mail Address in ascending order. Your ORDER BY clause would resemble the following:
+        </p>
+        <p class="sql-stmt"><code>ORDER BY Company DESC, [E-mail Address]</code></p>
+        <div class="notes">
+          <p>
+           Note: By default, Access sorts values in ascending order (A-Z, smallest to largest). Use the DESC keyword to sort values in descending order instead.
+          </p>
+        </div>
+
+      </section>
+      <!------ FOURTH SECTION ------>
+      <section class="main-section" id="Working_with_summarized_data:_GROUP_BY">
+        <header><h1>Working with summarized data: GROUP BY</h1></header>
+        <p>
+          Sometimes you want to work with summarized data, such as the total sales in a month, or the most expensive items in an inventory. To do this, you apply an aggregate function to a field in your SELECT clause. For example, if you want your query to show the count of e-mail addresses listed for each company, your SELECT clause might resemble the following:
+        </p>
+
+        <p class="sql-stmt"><code>SELECT COUNT([E-mail Address]), Company</code></p>
+
+        <p>
+          The aggregate functions that you can use depend on the type of data that is in the field or expression that you want to use. 
+        </p>
+
+        <h2>Specifying fields that are not used in an aggregate function: The GROUP BY clause</h2>
+        <p>
+          When you use aggregate functions, you usually must also create a GROUP BY clause. A GROUP BY clause lists all the fields to which you do not apply an aggregate function. If you apply aggregate functions to all the fields in a query, you do not have to create the GROUP BY clause.
+        </p>
+        <p>
+          A GROUP BY clause immediately follows the WHERE clause, or the FROM clause if there is no WHERE clause. A GROUP BY clause lists the fields as they appear in the SELECT clause.
+        </p>
+        <p>
+          For example, continuing the previous example, if your SELECT clause applies an aggregate function to [E-mail Address] but not to Company, your GROUP BY clause would resemble the following:
+        </p>
+
+        <p class="sql-stmt"><code>GROUP BY Company</code></p>
+
+      </section>
+      <!------ FIFTH SECTION ------->
+      <section class="main-section" id="Combining_query_results:_UNION">
+        <header><h1>Combining query results: UNION</h1></header>
+        <p>
+          When you want to review all the data that is returned by several similar select queries together, as a combined set, you use the UNION operator.
+        </p>
+        <p>
+          The UNION operator lets you combine two SELECT statements into one. The SELECT statements that you combine must have the same number of output fields, in the same order, and with the same or compatible data types. When you run the query, data from each set of corresponding fields is combined into one output field, so that the query output has the same number of fields as each of the select statements.
+        </p>
+        <p>
+          When you use the UNION operator, you can also specify whether the query results should include duplicate rows, if any exist, by using the ALL key word.
+        </p>
+        <p>
+          The basic SQL syntax for a union query that combines two SELECT statements is as follows:
+        </p>
+        <p class="sql-stmt"><code>
+SELECT field_1<br>
+FROM table_1<br>
+UNION [ALL]<br>
+SELECT field_a<br>
+FROM table_a<br>
+;<br>
+        </code></p>
+        <p>
+          When you use the UNION operator, you can also specify whether the query results should include duplicate rows, if any exist, by using the ALL key word.
+        </p>
+        <p>
+          The basic SQL syntax for a union query that combines two SELECT statements is as follows:
+        </p>
+        <p>
+          <p class="sql-stmt">
+          <code>
+SELECT field_1 <br>
+FROM table_1 <br>
+UNION [ALL] <br>
+SELECT field_a <br>
+FROM table_a <br>
+; <br>
+          </code>
+          </p>
+      </section>
+    </div>
+    </main>
+    
+  </body>
+
+</html>
